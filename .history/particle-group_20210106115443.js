@@ -23,7 +23,7 @@ export class ParticleGroup {
 
     for (let i = 0; i < total; i++) {
       const item = this.particles[i];
-      item.vy += GRAVITY;
+      item.vx += GRAVITY;
 
       if (pointCircle(item.x, item.y, mouse.x, mouse.y, 80)) {
         const pos = this.getPullPos(item.x, item.y, mouse.x, mouse.y);
@@ -58,7 +58,7 @@ export class ParticleGroup {
   setAngle(item1, item2, connectAngle) {
     const angle = connectAngle - DEFAILT_ANGLE;
     const tx = item1.x + Math.cos(angle);
-    const ty = item1.y + Math.sin(angle);
+    const ty = item2.y + Math.sin(angle);
     const vx = (item2.x - tx) * VERTICAL_RATE;
     const vy = (item2.y - ty) * VERTICAL_RATE;
     item1.vx += vx;

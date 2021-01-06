@@ -58,7 +58,7 @@ export class ParticleGroup {
   setAngle(item1, item2, connectAngle) {
     const angle = connectAngle - DEFAILT_ANGLE;
     const tx = item1.x + Math.cos(angle);
-    const ty = item1.y + Math.sin(angle);
+    const ty = item2.y + Math.sin(angle);
     const vx = (item2.x - tx) * VERTICAL_RATE;
     const vy = (item2.y - ty) * VERTICAL_RATE;
     item1.vx += vx;

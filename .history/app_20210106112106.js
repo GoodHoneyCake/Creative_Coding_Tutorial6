@@ -9,8 +9,6 @@ class App {
         families: ["Hind:700"],
       },
       fontactive: () => {
-        this.visual = new Visual();
-
         window.addEventListener("resize", this.resize.bind(this), false);
         this.resize();
 
@@ -19,7 +17,7 @@ class App {
     });
   }
   setWebgl() {
-    this.renderer = new PIXI.Renderer({
+    this.renderer = new devicePixelRatio.Renderer({
       width: document.body.clientWidth,
       height: document.body.clientHeight,
       antialias: true,
@@ -39,14 +37,10 @@ class App {
     this.stageHeight = document.body.clientHeight;
 
     this.renderer.resize(this.stageWidth, this.stageHeight);
-
-    this.visual.show(this.stageWidth, this.stageHeight, this.stage);
   }
 
   animate(t) {
     requestAnimationFrame(this.animate.bind(this));
-
-    this.visual.animate();
 
     this.renderer.render(this.stage);
   }

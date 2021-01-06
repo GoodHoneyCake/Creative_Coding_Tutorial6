@@ -19,7 +19,7 @@ class App {
     });
   }
   setWebgl() {
-    this.renderer = new PIXI.Renderer({
+    this.renderer = new devicePixelRatio.Renderer({
       width: document.body.clientWidth,
       height: document.body.clientHeight,
       antialias: true,
@@ -45,8 +45,6 @@ class App {
 
   animate(t) {
     requestAnimationFrame(this.animate.bind(this));
-
-    this.visual.animate();
 
     this.renderer.render(this.stage);
   }

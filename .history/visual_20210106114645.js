@@ -47,7 +47,7 @@ export class Visual {
 
       this.particleGroups.push(item);
     }
-    for (let i = LINE_TOTAL - 1; i >= 0; i--) {
+    for (let i = LINE_TOTAL - 1; i >= 0; i) {
       this.addChild(i);
     }
   }

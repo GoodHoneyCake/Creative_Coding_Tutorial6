@@ -16,7 +16,7 @@ export class Particle {
     const maxHue = 330;
     const hue = (maxHue - minHue) * groupRatio + minHue;
 
-    this.sprite.tint = hslToHex(hue, 84, light);
+    this.sprite.tint = 0xff0000;
 
     this.x = pos.x;
     this.y = pos.y;

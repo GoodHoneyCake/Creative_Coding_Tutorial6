@@ -8,8 +8,8 @@ export class Particle {
     const scale = (maxScale - minScale) * indexRatio + minScale;
     this.sprite.scale.set(scale);
 
-    const minLight = 60;
-    const maxLight = 40;
+    const minLight = 40;
+    const maxLight = 60;
     const light = (maxLight - minLight) * indexRatio + minLight;
 
     const minHue = 280;
