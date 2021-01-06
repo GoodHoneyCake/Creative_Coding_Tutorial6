@@ -26,13 +26,4 @@ export class Particle {
     this.vx = 0;
     this.vy = 0;
   }
-
-  animate(index, total) {
-    if (index < total) {
-      this.x += this.vx;
-      this.y += this.vy;
-    }
-    this.sprite.x = this.x;
-    this.sprite.y = this.y;
-  }
 }

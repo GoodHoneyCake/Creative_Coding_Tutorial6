@@ -52,8 +52,6 @@ export function hslToHex(h, s, l) {
   green = green + m;
   blue = blue + m;
 
-  return `rgb(
-   ${(red * 255) << 16},
-   ${(green * 255) << 8}, 
-   ${(blue * 255) | 0})`;
+  return `rgb(${(red * 255) << 16},
+   ${(green * 255) << 8}, ${(blue * 255) | 0})`;
 }
