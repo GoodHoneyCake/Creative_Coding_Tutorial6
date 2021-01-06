@@ -11,7 +11,7 @@ class App {
           "A",
           2,
           document.body.clientWidth,
-          document.body.clientHeight
+          document.clientHeight
         );
       },
     });

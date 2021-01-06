@@ -7,12 +7,7 @@ class App {
       },
       fontactive: () => {
         this.text = new Text();
-        this.text.setText(
-          "A",
-          2,
-          document.body.clientWidth,
-          document.body.clientHeight
-        );
+        this.text.setTe;
       },
     });
   }
