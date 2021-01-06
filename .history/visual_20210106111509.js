@@ -9,7 +9,7 @@ export class Visual {
 
     this.texture = PIXI.Texture.from("particle.png");
 
-    this.particleGroups = [];
+    this.ParticleGroups = [];
 
     this.mouse = {
       x: 0,
@@ -35,7 +35,7 @@ export class Visual {
     });
     stage.addChild(this.container);
 
-    this.prticleGroups = [];
+    this.ParticleGroups = [];
     const total = this.pos.length;
     for (let i = 0; i < total; i++) {
       const item = new ParticleGroup(
@@ -45,23 +45,8 @@ export class Visual {
         LINE_TOTAL
       );
 
-      this.particleGroups.push(item);
-    }
-    for (let i = LINE_TOTAL - 1; i >= 0; i--) {
-      this.addChild(i);
-    }
-  }
-
-  addChild(index) {
-    for (let i = 0; i < this.particleGroups.length; i++) {
-      this.container.addChild(this.particleGroups[i].particles[index].sprite);
-    }
-  }
-
-  animate() {
-    for (let i = 0; i < this.particleGroups.length; i++) {
-      const item = this.particleGroups[i];
-      item.animate(this.mouse);
+      this.ParticleGroups.push(item);
+      this.container.addChild(item.sprite);
     }
   }
 

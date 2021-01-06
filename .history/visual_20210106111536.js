@@ -46,22 +46,7 @@ export class Visual {
       );
 
       this.particleGroups.push(item);
-    }
-    for (let i = LINE_TOTAL - 1; i >= 0; i--) {
-      this.addChild(i);
-    }
-  }
-
-  addChild(index) {
-    for (let i = 0; i < this.particleGroups.length; i++) {
-      this.container.addChild(this.particleGroups[i].particles[index].sprite);
-    }
-  }
-
-  animate() {
-    for (let i = 0; i < this.particleGroups.length; i++) {
-      const item = this.particleGroups[i];
-      item.animate(this.mouse);
+      this.container.addChild(item.sprite);
     }
   }
 

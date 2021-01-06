@@ -60,9 +60,8 @@ export class Visual {
 
   animate() {
     for (let i = 0; i < this.particleGroups.length; i++) {
-      const item = this.particleGroups[i];
-      item.animate(this.mouse);
-    }
+      const item = this.particleGroups[i]
+      item.animate(this.mouse)
   }
 
   onMove(e) {
