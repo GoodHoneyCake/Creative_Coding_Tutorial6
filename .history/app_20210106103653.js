@@ -1,3 +1,4 @@
+import { Text } from "./text.js";
 class App {
   constructor() {
     this.setWebgl();
@@ -7,10 +8,13 @@ class App {
         families: ["Hind:700"],
       },
       fontactive: () => {
-        window.addEventListener("resize", this.resize.bind(this), false);
-        this.resize();
-
-        requestAnimationFrame(this.animate.bind(this));
+        this.text = new Text();
+        this.text.setText(
+          "A",
+          2,
+          document.body.clientWidth,
+          document.body.clientHeight
+        );
       },
     });
   }
@@ -26,21 +30,6 @@ class App {
       backgroundColor: 0xffffff,
     });
     document.body.appendChild(this.renderer.view);
-
-    this.stage = new PIXI.Container();
-  }
-
-  resize() {
-    this.stageWidth = document.body.clientWidth;
-    this.stageHeight = document.body.clientHeight;
-
-    this.renderer.resize(this.stageWidth, this.stageHeight);
-  }
-
-  animate(t) {
-    requestAnimationFrame(this.animate.bind(this));
-
-    this.renderer.render(this.stage);
   }
 }
 

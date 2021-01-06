@@ -35,12 +35,8 @@ class App {
     this.stageHeight = document.body.clientHeight;
 
     this.renderer.resize(this.stageWidth, this.stageHeight);
-  }
 
-  animate(t) {
-    requestAnimationFrame(this.animate.bind(this));
-
-    this.renderer.render(this.stage);
+    this.visual.show(this.stageWidth, this.stageHeight, this.stage);
   }
 }
 
